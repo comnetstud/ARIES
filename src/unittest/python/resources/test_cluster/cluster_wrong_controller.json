@@ -1,0 +1,10 @@
+{
+  "cluster0": {
+    "cluster_agents": [
+      "AGENT0"
+    ],
+    "controller": "WrongControllerName",
+    "priority": 1,
+    "delay": 0
+  }
+}

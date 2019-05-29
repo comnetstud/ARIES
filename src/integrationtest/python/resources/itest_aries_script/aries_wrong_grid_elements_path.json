@@ -1,0 +1,9 @@
+{
+  "topology": "src/integrationtest/python/resources/itest_aries_script/topology.json",
+  "grid_elements": "wrong_grid_elements",
+  "simulation_steps": 1000,
+  "mongodb_uri": "mongodb://mongo:27017/",
+  "redis_host": "redis",
+  "redis_port": 6379,
+  "solver_type": "linear"
+}

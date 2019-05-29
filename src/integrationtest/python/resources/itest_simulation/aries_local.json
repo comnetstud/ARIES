@@ -1,0 +1,9 @@
+{
+  "topology": "src/integrationtest/python/resources/itest_simulation/topology_1.json",
+  "grid_elements": "src/integrationtest/python/resources/itest_simulation/grid_elements_1.json",
+  "simulation_steps": 100,
+  "mongodb_uri": "mongodb://localhost:12345/",
+  "redis_host": "localhost",
+  "redis_port": 12346,
+  "solver_type": "linear"
+}

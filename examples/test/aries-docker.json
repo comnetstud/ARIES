@@ -1,0 +1,11 @@
+{
+  "topology": "/data/aries//topology.json",
+  "grid_elements": "/data/aries/grid_elements.json",
+  "clusters": "/data/aries/clusters.json",
+  "simulation_steps": 0,
+  "latency": 1000,
+  "mongodb_uri": "mongodb://mongo:27017/",
+  "redis_host": "redis",
+  "redis_port": 6379,
+  "solver_type": "linear"
+}

@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    ports:
+    - "6380:6379"
+  mongo:
+    image: mongo
+    ports:
+    - "27018:27017"
+  mongo-client:
+    image: mongo
+    restart: on-failure
+    command: mongo mongo:27017/aries --eval load(\"/data/init_mongodb.js\")
+    volumes:
+    - ../../docker:/data
+  web:
+    build:
+      context: ../..
+      dockerfile: ./docker/aries-web/Dockerfile
+    command: /usr/bin/supervisord -c /etc/supervisord.conf
+    ports:
+    - "80:80"
+    depends_on:
+    - mongo
+    - redis
+    volumes:
+    - ../../docker:/data
+  aries:
+    build:
+      context: ../..
+      dockerfile: ./docker/aries/Dockerfile
+    command: aries --conf /data/aries-docker.json
+    depends_on:
+    - web
+    - mongo-client
+    - mongo
+    - redis
+    volumes:
+    - ../test:/data

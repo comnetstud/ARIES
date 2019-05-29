@@ -1,0 +1,10 @@
+{
+  "topology": "configurations/configuration_1/topology.json",
+  "grid_elements": "configurations/configuration_1/grid_elements.json",
+  "simulation_steps": 1000,
+  "latency": 1000,
+  "mongodb_uri": "mongodb://localhost:27017/",
+  "redis_host": "localhost",
+  "redis_port": 6379,
+  "solver_type": "linear"
+}

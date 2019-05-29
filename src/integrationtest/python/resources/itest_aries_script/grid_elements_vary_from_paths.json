@@ -1,0 +1,186 @@
+{
+  "agents": {
+    "AGENT0": {
+      "voltage_rating": 230,
+      "power_rating": 1000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "request_inject_power": 0,
+      "request_power_factor": 1,
+      "battery": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "active": 0
+      },
+      "pv_panel": {
+        "unit_area": 2,
+        "series": 50,
+        "parallels": 50,
+        "efficiency": 0.8,
+        "solar_irradiance": 0,
+        "battery_coupling_efficiency": 1,
+        "heating_contribution": 0,
+        "active": 0
+      },
+      "wind_generator": {
+        "power_coefficient": 0.59,
+        "air_density": 1.225,
+        "area": 2,
+        "wind_speed": 10,
+        "battery_coupling_efficiency": 1,
+        "active": 0
+      },
+      "electrical_vehicle": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "consumption": 20,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "charge_current": 0,
+        "power_supplier": 1,
+        "active": 0
+      },
+      "water_tank": {
+        "capacity": 100,
+        "temp": 20,
+        "active": 0
+      }
+    },
+    "AGENT1": {
+      "voltage_rating": 230,
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "request_inject_power": 0,
+      "request_power_factor": 1,
+      "battery": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "active": 0
+      },
+      "pv_panel": {
+        "unit_area": 2,
+        "series": 50,
+        "parallels": 50,
+        "efficiency": 0.8,
+        "solar_irradiance": 0,
+        "battery_coupling_efficiency": 1,
+        "heating_contribution": 0,
+        "active": 0
+      },
+      "wind_generator": {
+        "power_coefficient": 0.59,
+        "air_density": 1.225,
+        "area": 2,
+        "wind_speed": 10,
+        "battery_coupling_efficiency": 1,
+        "active": 0
+      },
+      "electrical_vehicle": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "consumption": 20,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "charge_current": 0,
+        "power_supplier": 1,
+        "active": 0
+      },
+      "water_tank": {
+        "capacity": 100,
+        "temp": 20,
+        "active": 0
+      }
+    },
+    "AGENT2": {
+      "voltage_rating": 230,
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "request_inject_power": 0,
+      "request_power_factor": 1,
+      "battery": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "active": 0
+      },
+      "pv_panel": {
+        "unit_area": 2,
+        "series": 50,
+        "parallels": 50,
+        "efficiency": 0.8,
+        "solar_irradiance": 0,
+        "battery_coupling_efficiency": 1,
+        "heating_contribution": 0,
+        "active": 0
+      },
+      "wind_generator": {
+        "power_coefficient": 0.59,
+        "air_density": 1.225,
+        "area": 2,
+        "wind_speed": 10,
+        "battery_coupling_efficiency": 1,
+        "active": 0
+      },
+      "electrical_vehicle": {
+        "voltage": 24,
+        "capacity": 1296000,
+        "status": 1296000,
+        "consumption": 20,
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "inverter_input_voltage": 24,
+        "inverter_output_voltage": 230,
+        "inverter_efficiency": 0.87,
+        "charge_current": 0,
+        "power_supplier": 1,
+        "active": 0
+      },
+      "water_tank": {
+        "capacity": 100,
+        "temp": 20,
+        "active": 0
+      }
+    }
+  },
+  "lines": {
+    "B0": {
+      "resistance": 0.173,
+      "reactance": 0.044
+    },
+    "B1": {
+      "resistance": 0.173,
+      "reactance": 0.044
+    },
+    "B2": {
+      "resistance": 0.173,
+      "reactance": 0.044
+    }
+  }
+}

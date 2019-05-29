@@ -1,0 +1,296 @@
+{
+  "AGENT0": [
+    {
+      "power_rating": 1000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 1,
+        "contribution_reactive": 1,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0,
+        "contribution_reactive": 0,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    }
+  ],
+  "AGENT1": [
+    {
+      "power_rating": 1500,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0,
+        "contribution_reactive": 0,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 3000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0,
+        "contribution_reactive": 0,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 3000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 3000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    },
+    {
+      "power_rating": 3000,
+      "power_factor": 0.95,
+      "incoming_power": 0,
+      "battery": {
+        "contribution_active": 0.5,
+        "contribution_reactive": 0.5,
+        "active": 1
+      },
+      "electrical_vehicle": {
+        "contribution_active": 0.3,
+        "contribution_reactive": 0.3,
+        "power_supplier": 0.3,
+        "active": 0
+      },
+      "pv_panel": {
+        "solar_irradiance": 1,
+        "heating_contribution": 0.3,
+        "active": 0
+      },
+      "water_tank": {
+        "active": 0
+      },
+      "wind_generator": {
+        "wind_speed": 10,
+        "heating_contribution": 0.3,
+        "active": 0
+      }
+    }
+  ]
+}

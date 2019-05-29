@@ -1,0 +1,29 @@
+{
+  "power_rating": 1900,
+  "power_factor": 0.95,
+  "incoming_power": 0,
+  "battery": {
+    "contribution_active": 0.3,
+    "contribution_reactive": 0.3,
+    "active": 1
+  },
+  "electrical_vehicle": {
+    "contribution_active": 0.3,
+    "contribution_reactive": 0.3,
+    "power_supplier": 0.3,
+    "active": 1
+  },
+  "pv_panel": {
+    "solar_irradiance": 1,
+    "heating_contribution": 0.3,
+    "active": 1
+  },
+  "water_tank": {
+    "active": 1
+  },
+  "wind_generator": {
+    "wind_speed": 10,
+    "heating_contribution": 0.3,
+    "active": 0
+  }
+}

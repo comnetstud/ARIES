@@ -1,0 +1,11 @@
+{
+  "topology": "/vagrant/examples/configurations/test/topology.json",
+  "grid_elements": "/vagrant/examples/configurations/test/grid_elements.json",
+  "clusters": "/vagrant/examples/configurations/test/clusters.json",
+  "simulation_steps": 10,
+  "latency": 0,
+  "mongodb_uri": "mongodb://localhost:27017/",
+  "redis_host": "localhost",
+  "redis_port": 6379,
+  "solver_type": "linear"
+}

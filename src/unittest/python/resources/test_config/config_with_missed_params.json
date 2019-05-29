@@ -1,0 +1,4 @@
+{
+  "topology": "configurations/configuration_1/topology.json",
+  "grid_elements": "configurations/configuration_1/grid_elements.json"
+}

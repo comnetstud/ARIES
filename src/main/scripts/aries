@@ -1,0 +1,155 @@
+#!/usr/bin/env python
+#
+# The aries - v${version}
+#
+# usage: aries [-h] [--version] [--conf CONF] [--loglevel LOGLEVEL] [--validate]
+#
+# Setup and Run Electrical Steady State Simulations
+#
+# optional arguments:
+#   -h, --help           show this help message and exit
+#   --version            show version
+#   --conf CONF          aries config for running simulation_params
+#   --loglevel LOGLEVEL  aries log level for running simulation_params [INFO | DEBUG | ERROR ]
+#   --validate           validation for grid_elements, topology and clusters
+
+import argparse
+import json
+import logging
+import sys
+
+from aries.controller import cluster_utils
+from aries.core import utils
+from aries.core.config.config import Config
+from aries.core.constants import LINEAR_SOLVER
+from aries.core.db.mongodb import MongoDB
+from aries.core.event.event_queue import EventQueue
+from aries.core.exceptions import ValidationError
+from aries.core.grid import grid_utils
+from aries.core.log import log
+from aries.simulation import simulation_utils
+from aries.simulation.run_simulation import run_simulation
+from aries.simulation.simulation import Simulation
+
+
+def check_if_agent_and_paths_same_in_linear(agents, paths):
+    """Check if agents and paths has same names"""
+    agent_names = agents.keys() - paths.keys()
+    path_names = paths.keys() - agents.keys()
+    if len(agent_names) > 0:
+        raise ValidationError(
+            "Agent names is not the same. Please check these name(s): {} in grid elements paths.".format(agent_names))
+    if len(path_names) > 0:
+        raise ValidationError(
+            "Path agent names is not the same. Please check these name(s): {} in topology paths.".format(path_names))
+
+
+def print_if_simulation_is_valid(agents, lines, paths, nodes, clusters=None):
+    """Print validation info"""
+    print("Agent : {}".format(len(agents)))
+    print("Line : {}".format(len(lines)))
+    print("Path : {}".format(len(paths)))
+    print("Node : {}".format(len(nodes)))
+    if clusters:
+        print("Cluster : {}".format(len(clusters)))
+    print("Validation is ok.")
+
+
+def main(argv, external_mongodb_client=None, external_redis_client=None):
+    parser = argparse.ArgumentParser(description='Setup and Run Electrical Steady State Simulations')
+    parser.add_argument('--version', help='show version', action="store_true")
+    parser.add_argument('--conf', type=str, help='aries config for running simulation_params')
+    parser.add_argument('--loglevel', type=str,
+                        help='aries log level for running simulation_params [INFO | DEBUG | ERROR ]')
+    parser.add_argument('--validate', help='validation for grid_elements, topology and clusters', action="store_true")
+
+    if len(argv) == 1:
+        parser.print_help()
+        return 2
+
+    try:
+        args = parser.parse_args(argv[1:])
+
+        # TODO: add default print
+        # TODO: storage auth
+
+        if args.version:
+            print("aries version {}".format('${version}'))
+            return 1
+
+        # Init loggger for application
+        loglevel = logging.INFO
+        if args.loglevel:
+            if args.loglevel not in logging._nameToLevel:
+                print("Not supported level {}".format(args.loglevel))
+                return 1
+            loglevel = args.loglevel
+
+        log.setup_log(loglevel)
+        logger = logging.getLogger(__name__)
+
+        if args.conf is not None:
+            try:
+                with utils.check_if_file_exists(file_path=args.conf) as f:
+                    j = json.load(f)
+                    config = Config.load(j)
+
+                    with utils.check_if_file_exists(config.grid_elements) as grid_file:
+                        grid_element_json = json.load(grid_file)
+                        agents, lines = grid_utils.create_grid_elements(grid_element_json)
+
+                    with utils.check_if_file_exists(config.topology) as topology_file:
+                        topology_json = json.load(topology_file)
+                        paths, nodes = grid_utils.create_topology(topology_json)
+
+                    clusters = None
+                    if config.clusters:
+                        with utils.check_if_file_exists(config.clusters) as cluster_file:
+                            cluster_json = json.load(cluster_file)
+                            clusters = cluster_utils.create_clusters(cluster_json)
+
+                    if config.solver_type == LINEAR_SOLVER:
+                        check_if_agent_and_paths_same_in_linear(agents, paths)
+
+                    if args.validate:
+                        print_if_simulation_is_valid(agents=agents, lines=lines, paths=paths, nodes=nodes,
+                                                     clusters=clusters)
+                        return 1
+
+                    mongodb_client = utils.check_if_mongodb_is_running(
+                        config.mongodb_uri) if external_mongodb_client is None else external_mongodb_client
+                    redis_client = utils.check_if_redis_is_running(config.redis_host,
+                                                                   config.redis_port) if external_redis_client is None \
+                        else external_redis_client
+
+                    event_queue = EventQueue(redis=redis_client)
+                    event_queue.cleanup()
+
+                    storage = MongoDB(client=mongodb_client)
+
+                    solver = simulation_utils.create_solver(solver_type=config.solver_type, paths=paths, nodes=nodes,
+                                                            lines=lines)
+                    simulation_id = storage.write_simulation(agents=agents, lines=lines, paths=paths,
+                                                             nodes=nodes, solver=solver.type, clusters=clusters)
+
+                    simulation = Simulation(agents=agents, lines=lines, nodes=nodes, paths=paths, clusters=clusters,
+                                            storage=storage, latency=config.latency, simulation_id=simulation_id,
+                                            event_queue=event_queue, solver=solver)
+
+                    run_simulation(simulation=simulation, number_of_steps=config.simulation_steps)
+
+                    return 1
+            except Exception as e:
+                logger.exception(e)
+                return 0
+    except SystemExit:
+        return 0
+    except Exception as e:
+        try:
+            parser.print_help()
+        except:
+            return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(argv=sys.argv))

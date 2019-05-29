@@ -1,0 +1,63 @@
+*.py[co]
+*.bak
+tmp
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+target
+legacy
+develop-eggs
+.installed.cfg
+.project
+.pydevproject
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+htmlcov
+.coverage
+.tox
+
+# Idea files
+.idea
+*.iml
+
+# Virtual env
+ve*
+
+.*~
+*~
+.*.swp
+
+# sublime project files
+aries.sublime*
+.ropeproject
+.codeintel
+
+# sonar analysis
+.sonar
+
+
+# MACOS specific files
+.DS_Store
+
+# Ninja IDE
+*.nja
+
+tags
+
+# Vagrant
+.vagrant
+Vagrant*
+provisioning/*
+ide_settings/*
+ubuntu-bionic-*

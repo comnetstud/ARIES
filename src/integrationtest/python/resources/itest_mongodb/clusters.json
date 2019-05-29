@@ -1,0 +1,18 @@
+{
+  "cluster0": {
+    "cluster_agents": [
+      "AGENT0"
+    ],
+    "controller": "LoadSharingCluster",
+    "priority": 1,
+    "delay": 0
+  },
+  "cluster1": {
+    "cluster_agents": [
+      "AGENT1"
+    ],
+    "controller": "StayingAliveCluster",
+    "priority": 1,
+    "delay": 0
+  }
+}
